@@ -1,0 +1,68 @@
+:root{
+    --clr-primari-1:#000;
+    --clr-primary-2:#fff;
+}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "poppins";
+}
+
+h1,h2,h3{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header--top{
+    display: flex;
+    align-items: center;
+    color: var(--clr-primary-2);
+    background-color: var(--clr-primari-1);
+    height: 70px;
+    padding-inline: 2em;
+}
+
+.header--top a:not(.btn){
+    color: var(--clr-primary-2);
+}
+
+.header--top ul{
+    display: flex;
+    align-items: center;
+}
+.header--top li{
+    margin-inline: 1em;
+}
+
+nav{
+    margin-left: auto;
+}
+
+.header--hero{
+    height: calc(100vh - 70px);
+    background-image: url('./assets/img/1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn{
+    font-size: 1rem;
+    background-color: var(--clr-primary-2);
+    color: var(--clr-primari-1);
+    padding: .6em .8em;
+    border-radius: 100px;
+}
+
