@@ -45,7 +45,6 @@ img{
     color: #ffff;
     z-index: 99;
     position: relative;
-    z-index: 1;
 }
 
 .logo::after{
@@ -135,12 +134,12 @@ img{
     margin-inline: 1em;
 }
 
-nav{
+nav.header--nav{
     margin-left: auto;
 }
 
 @media (max-width:770px) {
-    nav{
+    nav.header--nav{
         position: absolute;
         z-index: 10;
         height: 100vh;
