@@ -11,8 +11,8 @@
     <div class="container">
         <header>
             <div class="header--top">
-                <div class="logo"><h1>Logo</h1></div>
-                <nav style="display: none;">
+                <div class="logo">RentMe<span class="now">Now</span></div>
+                <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Contact</a></li>
@@ -21,77 +21,114 @@
                         <li><a href="#" class="btn rent-now">Rent Now</a></li>
                     </ul>
                 </nav> 
+                <button class="btn-hamburger">
+                    <img src="./assets/icons/icon-hamburger.svg" aria-hidden="true">
+                </button>
             </div>
             <div class="header--hero">     
                 <div class="hero--text">
-                    <h2>Fast and easy way to rent a vehicl</h2>
+                    <h1>Fast and easy way to rent a vehicle</h1>
                     <p>
                         If you have not used the internet to rent a vehicle before, you are unlikely to understand how simple it is.In fact you will probably not believe how easy it is to rent a car, truck or van.
                     </p>
+                    <a href="#" class="btn rent-now">Rent Now</a>
                 </div>
                 <div class="hero--img">
-                    <img src="./assets/img/undraw_vehicle_sale_a645.svg" alt="">
+                    <img src="./assets/img/berline.png" alt="berline car">
                 </div>
             </div>
         </header>
         <main class="main">
             <!-- section: our vehicls -->
             <section class="our-vehicles">
-                <h2>Our vehicles</h2>
+                <h2 class="section-title"><span>Our</span> vehicles</h2>
                 <ul class="vehicles">
                     <li class="vehicle">
-                        <img src="./assets/img/moto.jpg" alt="motocycle" class="v-image">
-                        <p class="v-name">Motorcycle</p>
+                        <img src="./assets/img/moto.jpg" alt="motocycle" class="vehicle-image">
+                        <p class="vehicle-name">Motorcycle</p>
+                        <a href="#" class="btn rent-now">Rent Now</a>
                     </li>
                     <li class="vehicle">
-                        <img src="./assets/img/berline.png" alt="berline" class="v-image">
-                        <p class="v-name">Berline</p>
+                        <img src="./assets/img/berline.png" alt="berline" class="vehicle-image">
+                        <p class="vehicle-name">Berline</p>
+                        <a href="#" class="btn rent-now">Rent Now</a>
                     </li>
                     <li class="vehicle">
-                        <img src="./assets/img/truck.png" alt="truck" class="v-image">
-                        <p class="v-name">Truck</p>
+                        <img src="./assets/img/truck.png" alt="truck" class="vehicle-image">
+                        <p class="vehicle-name">Truck</p>
+                        <a href="#" class="btn rent-now">Rent Now</a>
                     </li>
                 </ul>
+                <a href="#" class="load-more">Load more ></a>
             </section>
             <!-- section: why us -->
             <section class="why-us">
-                <h2>Why RentMeNow</h2>
+                <h2 class="section-title"><span>Why</span> RentMeNow</h2>
                 <ul class="why-us-list">
                     <li>    
                         <img src="./assets/img/check-circle-solid.svg" aria-hidden="true"  >
-                        <span>World's biggest online car rental service</span>
+                        <span>World's biggest online car rental service.</span>
                     </li>
                     <li>    
                         <img src="./assets/img/check-circle-solid.svg" aria-hidden="true"  >
-                        <span>World's biggest online car rental service</span>
+                        <span>Rated by more than 3.5 million people.</span>
                     </li>
                     <li>    
                         <img src="./assets/img/check-circle-solid.svg" aria-hidden="true"  >
-                        <span>Rated by more than 3.5 million people</span>
-                    </li>
-                    <li>    
-                        <img src="./assets/img/check-circle-solid.svg" aria-hidden="true"  >
-                        <span>Most competitive price ever</span>
+                        <span>Most competitive price ever!</span>
                     </li>
                 </ul>
             </section>
             <!-- section: tesla is in -->
             <section class="tesla-is-in">
-                <h2>Tesla is in!</h2>
+                <h2 class="section-title"><span>Tesla</span> is in!</h2>
                 <div>
                     <div class="tesla-image">
-                        <img src="./assets/img/tesla-no-bg.png" alt="tesla car">
+                        <img src="./assets/img/tesla-nobg.png" alt="tesla car">
                     </div>
-                    <div>
+                    <div class="tesla-cta">
                         <p>Tesla has joined our fleet, be the first to try it out!</p>
-                        <a href="#" class="btn rent-now">Rent Now</a>
+                        <form class="tesla-form">
+                            <input type="email" placeholder="example@email.com">
+                            <button type="submit">
+                                Rent it now
+                            </button>
+                        </form>
                     </div>
                 </div>
             </section>
         </main>
+        <!-- footer -->
+        <style>
+            
+        </style>
+        <footer class="footer">
+            <ul class="footer-list">
+                <li>
+                    <h3>About</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque natus voluptas hic voluptatem unde at?</p>
+                </li>
+                <li>
+                    <h3>Pages</h3>
+                    <ul class="pages-list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Reservation</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Follow us</h3>
+                    <ul class="media-list">
+                        <li><a href="#"><img src="./assets/icons/icon-twitter.svg" aria-hidden="true"></a></li>
+                        <li><a href="#"><img src="./assets/icons/icon-facebook.svg" aria-hidden="true"></a></li>
+                        <li><a href="#"><img src="./assets/icons/icon-instagram.svg" aria-hidden="true"></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="copy">&copy; 2021 RentMeNow All rights reserved.</p>
+        </footer>
     </div>
-    <main>
-
-    </main>
+    
 </body>
 </html>
