@@ -1,7 +1,7 @@
 const menuBtn = document.querySelector('.btn-hamburger');
 menuBtn.addEventListener('click',()=>{
     document.querySelector('.header--nav').classList.toggle('show');
-    menuBtn.querySelector('img').setAttribute('src','./assets/icons/icon-close.svg');
+    menuBtn.classList.toggle('arrow');
 });
 
 document.querySelector('.btn-submit').addEventListener('click',(e)=>{

@@ -94,13 +94,55 @@ img{
 }
 
 .btn-hamburger{
+    --width:26px;
     margin-left: auto;
     background-color: transparent;
     border: none;
     cursor: pointer;
     z-index: 99;
     display: none;
+    height: 35px;
+    width: var(--width);
 }
+
+.btn-hamburger .inner{
+    width: var(--width);
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+}
+
+.btn-hamburger .inner::after,
+.btn-hamburger .inner::before{
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    border-radius: inherit;
+    position: absolute;
+    right: 0;
+    transition: transform .3s ease;
+}
+
+.btn-hamburger .inner::before{
+    top: -10px;
+}
+
+.btn-hamburger .inner::after{
+    bottom: -10px;
+}
+
+.btn-hamburger.arrow .inner::after{
+    width: 50%;
+    transform: rotate(-49deg) translate(6px,-3px);
+}
+.btn-hamburger.arrow .inner::before{
+    width: 50%;
+    transform: rotate(49deg) translate(6px,3px);
+}
+
+
 
 .header--top a:not(.btn){
     color: #fff;
