@@ -87,6 +87,10 @@ img{
     background-color: var(--clr-primary-1);
     height: 70px;
     padding-inline: 2em;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    top: 0;
 }
 
 .btn-hamburger{
@@ -184,6 +188,7 @@ nav.header--nav{
     justify-content: center;
     flex-direction: column-reverse;
     align-items: center;
+    margin-top: 70px;
 }
 
 .hero--text{
@@ -225,6 +230,7 @@ nav.header--nav{
     .header--hero{
         flex-direction: row;
         background: none;
+        height: calc(100vh - 69px);
     }
     
     .header--hero::after{
