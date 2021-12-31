@@ -44,39 +44,39 @@
                 <h2>Gallery</h2>
                 <div class="gallery">
                     <div class="gallery--item">
-                        <div class="preview"><img src="./assets/icons/eye-preview.png" alt="Eye preview"></div>
+                        <div class="preview"><img src="./assets/icons/eye-preview.svg" alt="Eye preview"></div>
                         <img class="gallery--image" src="./assets/img-with-bg/berline-fave.jpg" alt="Berline car">
                     </div>
                     <div class="gallery--item">
-                        <div class="preview"><img src="./assets/icons/eye-preview.png" alt="Eye preview"></div>
+                        <div class="preview"><img src="./assets/icons/eye-preview.svg" alt="Eye preview"></div>
                         <img class="gallery--image" src="./assets/img-with-bg/moto.jpg" alt="Motocycle">
                     </div>
                     <div class="gallery--item">
-                        <div class="preview"><img src="./assets/icons/eye-preview.png" alt="Eye preview"></div>
+                        <div class="preview"><img src="./assets/icons/eye-preview.svg" alt="Eye preview"></div>
                         <img class="gallery--image" src="./assets/img-with-bg/tesla.jpg" alt="Tesla">
                     </div>
                     <div class="gallery--item">
-                        <div class="preview"><img src="./assets/icons/eye-preview.png" alt="Eye preview"></div>
+                        <div class="preview"><img src="./assets/icons/eye-preview.svg" alt="Eye preview"></div>
                         <img class="gallery--image" src="./assets/img-with-bg/grand-truck.jfif" alt="Grand truck">
                     </div>
                     <div class="gallery--item">
-                        <div class="preview"><img src="./assets/icons/eye-preview.png" alt="Eye preview"></div>
+                        <div class="preview"><img src="./assets/icons/eye-preview.svg" alt="Eye preview"></div>
                         <img class="gallery--image" src="./assets/img-with-bg/van.jpg" alt="Van">
                     </div>
                     <div class="gallery--item">
-                        <div class="preview"><img src="./assets/icons/eye-preview.png" alt="Eye preview"></div>
+                        <div class="preview"><img src="./assets/icons/eye-preview.svg" alt="Eye preview"></div>
                         <img class="gallery--image" src="./assets/img-with-bg/berline honda.jpg" alt="Berline honda">
                     </div>
                     <div class="gallery--item">
-                        <div class="preview"><img src="./assets/icons/eye-preview.png" alt="Eye preview"></div>
+                        <div class="preview"><img src="./assets/icons/eye-preview.svg" alt="Eye preview"></div>
                         <img class="gallery--image" src="./assets/img-with-bg/vans.jpg" alt="Vans">
                     </div>
                     <div class="gallery--item">
-                        <div class="preview"><img src="./assets/icons/eye-preview.png" alt="Eye preview"></div>
+                        <div class="preview"><img src="./assets/icons/eye-preview.svg" alt="Eye preview"></div>
                         <img class="gallery--image" src="./assets/img-with-bg/construction-machine.jfif" alt="Construction machine">
                     </div>
                     <div class="gallery--item">
-                        <div class="preview"><img src="./assets/icons/eye-preview.png" alt="Eye preview"></div>
+                        <div class="preview"><img src="./assets/icons/eye-preview.svg" alt="Eye preview"></div>
                         <img class="gallery--image" src="./assets/img-with-bg/compact.jpg" alt="Compact">
                     </div>
                 </div>
@@ -119,5 +119,25 @@
         </footer>
     </div>
     <script src="./main.js"></script>
+    <script>
+        const images = document.querySelectorAll('.gallery--image');
+        const closeStageBtn = document.querySelector('.close--stage');
+        const stage = document.querySelector('.stage');
+        const stageImg = stage.querySelector('.stage--image img');
+
+        images.forEach(image => {
+            image.addEventListener('click',()=>{
+                let src = image.getAttribute('src');
+                let alt = image.getAttribute('alt');
+
+                stageImg.setAttribute('src',src);
+                stageImg.setAttribute('alt',alt);
+
+                stage.classList.add('show--stage');
+            });
+        });
+
+        closeStageBtn.addEventListener('click',()=>{stage.classList.remove('show--stage')});
+    </script>
 </body>
 </html>

@@ -743,15 +743,27 @@ input:not(:placeholder-shown) {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0,0,0,.9);
-    display: flex;
-    place-items: center;
     display: none;
+    place-items: center;
+}
+
+.stage.show--stage{
+    display: flex;
 }
 
 .stage--image{
     width: 90%;
     max-width: 540px;
     margin: auto;
+}
+
+.stage.show--stage .stage--image{
+    animation: animateImage .5s forwards;
+}
+
+@keyframes animateImage {
+    from{transform: translateY(40px);}
+    to{transform: translate(0);}
 }
 
 .stage--image img{
