@@ -101,5 +101,15 @@
         </footer>
     </div>
     <script src="./main.js"></script>
+    <script>
+        document.querySelector('.btn-submit').addEventListener('click',(e)=>{
+            e.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let subject = document.getElementById("subject").value;
+            let msg = document.getElementById("msg").value;
+            alert(`Processing...\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${msg}`);
+        });
+    </script>
 </body>
 </html>
