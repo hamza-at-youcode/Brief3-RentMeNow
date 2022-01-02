@@ -38,25 +38,25 @@
                         <!-- silde 1 -->
                         <div class="silde current--silde">
                             <h3 style="text-align: center;">Vehicle properties</h3>
-                            <div class="select--group">
+                            <div class="select--group type">
                                 <label for="type">Vehicle type</label>
-                                <select id="type">
+                                <!-- <select id="type">
                                     <option value="">Select</option>
-                                </select>
+                                </select> -->
                             </div>
-                            <div class="select--group">
+                            <div class="select--group fuel">
                                 <label for="fuel">Fuel</label>
-                                <select id="fuel">
+                                <select disabled id="fuel">
                                     <option value="">Select</option>
                                 </select>
                             </div>
-                            <div class="select--group">
+                            <div class="select--group gearbox">
                                 <label for="gearbox">Gearbox</label>
                                 <select disabled id="gearbox">
                                     <option value="">Select</option>
                                 </select>
                             </div>
-                            <div class="input--group">
+                            <div class="input--group duration">
                                 <label for="duration">Duration</label>
                                 <input type="number" min="1" value="1" id="duration">
                             </div>
@@ -79,12 +79,21 @@
                         </div>
                         <!-- slide 3 -->
                         <div class="silde">
-                            
+                            <h3 style="text-align: center;">Almost there!</h3>
+                            <div class="review">
+                                <p><strong>Vehicle name:</strong> <span>Citadine</span></p>
+                                <p><strong>Price (pure day):</strong> <span>12$</span></p>
+                                <p><strong>Gearbox:</strong> <span>Manuelle</span></p>
+                                <p><strong>Duration:</strong> <span>4Days</span></p>
+                                <p><strong>Fuel:</strong> <span>Electrique</span></p>
+                                <p class="total"><strong>Total: 45$</strong></p>
+                            </div>
+                            <button class="btn type="submit">Submit</button>
                         </div>
                     </div>
                     <!-- form controls -->
                     <div class="slide--control">
-                        <button class="btn--next">Next</button>
+                        <button type="button" class="btn btn--next">Next</button>
                     </div>
                 </form>
             </div>

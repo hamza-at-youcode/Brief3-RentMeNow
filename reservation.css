@@ -79,9 +79,8 @@ label{
     margin-top: 1em;
 }
 
-.slide--control .btn--next{
+.btn{
     border: none;
-    background-color: transparent;
     font-size: .9rem;
     float: right;
     background-color: var(--clr-secondary);
@@ -90,4 +89,20 @@ label{
     border-radius: 5px;
     cursor: pointer;
     letter-spacing: 1.5px;
+}
+
+.review{
+    margin-top: 1em;
+}
+
+.review p{
+    margin: 1.5em 0;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: underline;
+}
+
+.total{
+    font-size: 1.3rem;
+    margin: .5em 0;
 }
