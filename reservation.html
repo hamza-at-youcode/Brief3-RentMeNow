@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+    <title>RentMeNow | Reservation</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header--top">
+                <div class="logo">RentMe<span class="now">Now</span></div>
+                <nav class="header--nav">
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./gallery.html#gallery">Gallery</a></li>
+                        <li><a href="./reservation.html">Reservation</a></li>
+                        <li><a href="#" class="btn rent-now">Rent Now</a></li>
+                    </ul>
+                </nav> 
+                <button class="btn-hamburger">
+                    <div class="inner"></div>
+                </button>
+            </div>
+        </header>
+        <main style="margin-top: 70px;" class="main">
+            <div class="reservation">
+                <h2>Reservation</h2>
+                <!-- form -->
+                <form class="reservation--form">
+                    <!-- form sildes -->
+                    <div class="form--sildes">
+                        <!-- silde 1 -->
+                        <div class="silde current--silde">
+                            <h3 style="text-align: center;">Vehicle properties</h3>
+                            <div class="select--group">
+                                <label for="type">Vehicle type</label>
+                                <select id="type">
+                                    <option value="">Select</option>
+                                </select>
+                            </div>
+                            <div class="select--group">
+                                <label for="fuel">Fuel</label>
+                                <select id="fuel">
+                                    <option value="">Select</option>
+                                </select>
+                            </div>
+                            <div class="select--group">
+                                <label for="gearbox">Gearbox</label>
+                                <select disabled id="gearbox">
+                                    <option value="">Select</option>
+                                </select>
+                            </div>
+                            <div class="input--group">
+                                <label for="duration">Duration</label>
+                                <input type="number" min="1" value="1" id="duration">
+                            </div>
+                        </div>
+                        <!-- slide 2 -->
+                        <div class="silde">
+                            <h3 style="text-align: center;">Confirm your Identity</h3>
+                            <div class="input--group">
+                                <label for="fullname">Full name</label>
+                                <input type="text" placeholder="Jhon Doe" id="fullname">
+                            </div>
+                            <div class="input--group">
+                                <label for="email">Email</label>
+                                <input type="email" placeholder="example@email.com" id="email">
+                            </div>
+                            <div class="input--group">
+                                <label for="idcard">Identity card</label>
+                                <input type="text" placeholder="ex123456" id="idcard">
+                            </div>
+                        </div>
+                        <!-- slide 3 -->
+                        <div class="silde">
+                            
+                        </div>
+                    </div>
+                    <!-- form controls -->
+                    <div class="slide--control">
+                        <button class="btn--next">Next</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <!-- footer -->
+        <footer class="footer" style="display: none;">
+            <ul class="footer-list">
+                <li>
+                    <h3>About</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque natus voluptas hic voluptatem unde at?</p>
+                </li>
+                <li>
+                    <h3>Pages</h3>
+                    <ul class="pages-list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Reservation</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Follow us</h3>
+                    <ul class="media-list">
+                        <li><a href="#"><img src="./assets/icons/icon-twitter.svg" aria-hidden="true"></a></li>
+                        <li><a href="#"><img src="./assets/icons/icon-facebook.svg" aria-hidden="true"></a></li>
+                        <li><a href="#"><img src="./assets/icons/icon-instagram.svg" aria-hidden="true"></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="copy">&copy; 2021 RentMeNow All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="./main.js"></script>
+    <script type="module" src="./reservation.js"></script>
+</body>
+</html>

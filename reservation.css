@@ -1,0 +1,93 @@
+.reservation{
+    text-align: center;
+    height: 100vh;
+    background: url('./assets/img-with-bg/berline\ honda.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.reservation h2{
+    font-size: 1.9rem;
+    color: var(--clr-primary-2);
+    padding-top: 1em;
+}
+
+.reservation h3{
+    color: var(--clr-secondary);
+    font-size: 1.4rem;
+}
+
+.reservation--form{
+    text-align: start;
+    border: var(--clr-primary-2) 1px dotted;
+    width: min(540px,90%);
+    margin: auto;
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+.form--sildes{
+    position: relative;
+    height: 361px;
+}
+
+.silde{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 0;
+    transition: transform, opacity 1s ease;
+}
+
+.current--silde{
+    opacity: 1;
+    z-index: 1;
+}
+
+.prev--slide{
+    opacity: 0;
+    z-index: 0;
+}
+
+.select--group,
+.input--group{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+    padding: .3rem;
+    border-radius: 5px;
+}
+
+.select--group select,
+.input--group input{
+    border: 1px solid var(--clr-secondary);
+    padding: .8em;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+label{
+    font-weight: 600;
+    color: var(--clr-secondary);
+}
+
+.slide--control{
+    margin-top: 1em;
+}
+
+.slide--control .btn--next{
+    border: none;
+    background-color: transparent;
+    font-size: .9rem;
+    float: right;
+    background-color: var(--clr-secondary);
+    color: #fff;
+    padding: .6em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+}
