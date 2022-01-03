@@ -46,15 +46,15 @@
                     <form class="contact-form">
                         <div class="input-group">
                             <label for="name">Name</label>
-                            <input id="name" type="text" placeholder="Enter your name">
+                            <input required id="name" type="text" placeholder="Enter your name">
                         </div>
                         <div class="input-group">
                             <label for="email">E-mail</label>
-                            <input id="email" type="email" placeholder="Enter your email">
+                            <input required id="email" type="email" placeholder="Enter your email">
                         </div>
                         <div class="input-group">
                             <label for="subject">Subject</label>
-                            <input id="subject" type="text" placeholder="Subject">
+                            <input required id="subject" type="text" placeholder="Subject">
                         </div>
                         <div class="input-group">
                             <label for="msg">Message</label>
@@ -102,7 +102,7 @@
     </div>
     <script src="./main.js"></script>
     <script>
-        document.querySelector('.btn-submit').addEventListener('click',(e)=>{
+        document.querySelector('.contact-form').addEventListener('submit',(e)=>{
             e.preventDefault();
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
