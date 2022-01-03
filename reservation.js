@@ -54,6 +54,10 @@ durationInput.addEventListener('keyup',()=>{
     duration = parseInt(duration.value);
 });
 
+durationInput.addEventListener('click',()=>{
+    duration = parseInt(duration.value);
+});
+
 function swapSlide(){
     let currentSlide = document.querySelector('.current--silde');
     currentSlide.classList.add('prev--silde');
