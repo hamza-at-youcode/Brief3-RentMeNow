@@ -51,11 +51,11 @@ window.onload = () =>{
 }
 
 durationInput.addEventListener('keyup',()=>{
-    duration = parseInt(duration.value);
+    duration = parseInt(durationInput.value);
 });
 
 durationInput.addEventListener('click',()=>{
-    duration = parseInt(duration.value);
+    duration = parseInt(durationInput.value);
 });
 
 function swapSlide(){
@@ -68,8 +68,9 @@ function swapSlide(){
 
 function calculateTotalPrice(type,price,gearbox,duration,fuel){
     let total = price;
+    if (type.toLocaleLowerCase() !== 'moto'){
     if (gearbox.toLocaleLowerCase() === 'automatique')
-        total+=total*0.19;
+        total+=total*0.19;}
 
     if (fuel.toLocaleLowerCase() === 'electrique') total+=total*0.05;
     else if(fuel.toLocaleLowerCase() === 'hybride') total+=total*0.09;
@@ -114,7 +115,6 @@ nextBtn.addEventListener('click',(e)=>{
             swapSlide();
             let v = vehicles[selectedIndex];
             let total = calculateTotalPrice(v.type,v.price,v.gearbox,duration,selectedFuel);
-            console.log("total:",total);
             document.querySelector('.review').innerHTML = `
             <p><strong>Vehicle type:</strong> <span>${v.type}</span></p>
             <p><strong>Price (pure day):</strong> <span>${v.price}$</span></p>
@@ -128,6 +128,7 @@ nextBtn.addEventListener('click',(e)=>{
     }
 });
 
+form.addEventListener('submit',()=>{alert('Thank you for choosing our service!')});
 
 function isValide(input){
     if(input.disabled) return true;
