@@ -17,6 +17,10 @@ let selectGbox = null;
 
 let silde = 1;
 
+let selectedIndex = -1;
+let duration = 1;
+let selectedFuel = "";
+
 window.onload = () =>{
     let types = [];
     vehicles.forEach(v=>{types.push(v.type)});
@@ -26,6 +30,7 @@ window.onload = () =>{
     selectType.addEventListener('change',()=>{
         let index = vehicles.findIndex(v=>v.type == selectType.value);
         if(index != -1){
+            selectedIndex = index;
             selectFuel = createSelectElement(vehicles[index].fuel);
             fuel.querySelector(':nth-child(2)').remove();
             fuel.appendChild(selectFuel);
@@ -37,10 +42,38 @@ window.onload = () =>{
             if(selectType.value.toLocaleLowerCase() == 'moto'){
                 selectGbox.setAttribute('disabled',true);   
             }
+
+            selectFuel.addEventListener('change',()=>{
+                selectedFuel = selectFuel.value; 
+            });
         }
     });
 }
 
+durationInput.addEventListener('keyup',()=>{
+    duration = parseInt(duration.value);
+});
+
+function swapSlide(){
+    let currentSlide = document.querySelector('.current--silde');
+    currentSlide.classList.add('prev--silde');
+    currentSlide.classList.remove('current--silde');
+    currentSlide.nextElementSibling.classList.add('current--silde');
+    silde++;
+}
+
+function calculateTotalPrice(type,price,gearbox,duration,fuel){
+    let total = price;
+    if (gearbox.toLocaleLowerCase() === 'automatique')
+        total+=total*0.19;
+
+    if (fuel.toLocaleLowerCase() === 'electrique') total+=total*0.05;
+    else if(fuel.toLocaleLowerCase() === 'hybride') total+=total*0.09;
+    else if(fuel.toLocaleLowerCase() === 'essence') total+=total*0.14;
+    else if(fuel.toLocaleLowerCase() === 'diesel') total+=total*0.21;
+
+    return duration*total;
+}
 
 // Create select element (width options)
 function createSelectElement(options = [],required = false){
@@ -69,23 +102,25 @@ function createOptionElement(value,text){
 // Handel slides
 nextBtn.addEventListener('click',(e)=>{
     e.preventDefault();
-    console.log(silde);
-    let valide = false;
     if (silde === 1) {
-        valide = isValide(selectType) && isValide(selectFuel) && isValide(selectGbox) && isValide(durationInput);
+        if(isValide(selectType) && isValide(selectFuel) && isValide(selectGbox) && isValide(durationInput))
+            swapSlide();
     }else if(silde === 2) {
-        valide = isValide(nameInput) && isValide(emailInput) && isValide(identityInput);
-        nextBtn.style.display = 'none';
-    }
-
-    if(valide){
-        let currentSlide = document.querySelector('.current--silde');
-        currentSlide.classList.add('prev--silde');
-        currentSlide.classList.remove('current--silde');
-        currentSlide.nextElementSibling.classList.add('current--silde');
-        silde++;
-    }else{
-        alert("All fields are required!");
+        if(isValide(nameInput) && isValide(emailInput) && isValide(identityInput)){
+            swapSlide();
+            let v = vehicles[selectedIndex];
+            let total = calculateTotalPrice(v.type,v.price,v.gearbox,duration,selectedFuel);
+            console.log("total:",total);
+            document.querySelector('.review').innerHTML = `
+            <p><strong>Vehicle type:</strong> <span>${v.type}</span></p>
+            <p><strong>Price (pure day):</strong> <span>${v.price}$</span></p>
+            <p><strong>Gearbox:</strong> <span>${v.gearbox ? v.gearbox : '.....'}</span></p>
+            <p><strong>Duration:</strong> <span>${(duration > 1) ? duration+'-Days' : duration+'-Day'}</span></p>
+            <p><strong>Fuel:</strong> <span>${selectedFuel}</span></p>
+            <p class="total"><strong>Total: ${total}$</strong></p>
+            `;   
+            nextBtn.style.display = 'none';
+        }
     }
 });
 
